@@ -15,10 +15,10 @@ if ($_POST) {
     if ($prenom != "" and $nom != "" and $email != "" and $mdp != "" and $sexe != "") {
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $dateInscription = date("Y-m-d");
-            $control = $connexion->db->prepare("SELECT * FROM utilisateur WHERE email = :email");
-            $control->bindParam(':email', $email, PDO::PARAM_STR);
-            $control->execute();
-            $number = $control->rowCount();
+            $controle = $connexion->db->prepare("SELECT * FROM utilisateur WHERE email = :email");
+            $controle->bindParam(':email', $email, PDO::PARAM_STR);
+            $controle->execute();
+            $number = $controle->rowCount();
 
             if ($number == 0) {
                 $request = $connexion->db->prepare("INSERT INTO utilisateur(prenom, nom, email, mdp, sexe, date_inscription)

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-class Conexion {
+class Connexion {
     public $db;
     function __construct()
     {
@@ -9,5 +9,6 @@ class Conexion {
 }
 require_once("sessionManager.php");
 require_once("helper.php");
-$connexion = new Conexion();
+$connexion = new Connexion();
+$sessionManager = new SessionManager();
 ?>
