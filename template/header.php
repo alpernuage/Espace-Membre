@@ -8,4 +8,5 @@
     <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
+<div class="header"><?=SITE_NAME?></div>
     

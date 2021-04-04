@@ -1,12 +1,13 @@
 <?php
 require_once 'config/connexion.php';
 if (!$sessionManager->controle()) {
-    helper::redirect("/operations/login.php");
+    helper::redirect(SITE_URL."login.php");
     die();
 }
 $infoUtilisateur = $sessionManager->infoUtilisateur();
-
+require_once 'template/header.php';
 ?>
 
 <div class="title">Bonjour <?= $infoUtilisateur['prenom'] ?> </div>
-<a href="/operations/logout.php">Déconnexion</a>
+<div class="info">Prénom Nom : <?php echo $infoUtilisateur['prenom'] ?> <?php echo $infoUtilisateur['nom'] ?> </div>
+<a href="https://localhost/udemy-Mert-Buldur/espace_membre/operations/logout.php">Déconnexion</a>

@@ -2,8 +2,10 @@
 require_once '../config/connexion.php';
 if ($sessionManager->controle()) {
     sessionManager::deleteSession();
-    helper::redirect("/operations/login.php");
+    setcookie("login", $cookieArray, time()-36000);
+
+    helper::redirect("./login.php");
 } else {
-    helper::redirect("/operations/login.php");
+    helper::redirect("./login.php");
 }
 ?>

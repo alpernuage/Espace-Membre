@@ -28,7 +28,7 @@ if ($_POST) {
                 if ($add) {
                     $arr = ["email"=>$email, "mdp"=>md5($mdp)];
                     sessionManager::createSession($arr);
-                    helper::redirect("http://localhost");
+                    helper::redirect(SITE_URL);
                 } else {
                     echo "Inscription n'est pas réussi";
                 }
